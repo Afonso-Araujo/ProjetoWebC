@@ -942,8 +942,6 @@ form textarea {
 
   .col-lg-offset-12 {
     margin-left: 100%; } }
-@-ms-viewport {
-  width: device-width; }
 .visible-xs, .visible-sm, .visible-md, .visible-lg {
   display: none !important; }
 
@@ -1121,7 +1119,10 @@ form textarea {
       display: inline-block;
       vertical-align: middle; }
     .site-header .branding .logo {
-      margin-right: 10px; }
+      margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    }
     .site-header .branding .site-title {
       margin-bottom: 5px;
       font-size: 16px;
@@ -1223,7 +1224,8 @@ form textarea {
     top: 5px;
     right: 5px;
     bottom: 5px;
-    padding: 0 40px; }
+    padding: 0 40px;
+  }
 
 .forecast-container {
   width: 100%;
