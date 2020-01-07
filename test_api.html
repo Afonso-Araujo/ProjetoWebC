@@ -9,6 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <!-- vai buscar os scripts   <link rel="stylesheet" type="text/css" href="F6.css"> -->
+    <link rel="stylesheet" type="text/css" href="teste_api_style.css">
     <script src="js/api.js"></script>
 </head>
 <body>
@@ -19,23 +20,18 @@
     <button onclick="pesquisar();">Search</button>
 </div>
 <br><br>
-<div id="lista-cidades">
-    <div class="canada">
-        <h4 class="cidade">Cidade</h4>
-        <h4 class="temperatura">Temperatura</h4>
+<div class="container text-white " id="container">
+    <div class="row centro card-deck" id="lista-cidades">
+        <div class="pre_cidades card col-md-6 col-lg-4 mt-5 text-left">
+            <h4 class="cidade">Cidade</h4>
+            <h5 class="tempo">tempo</h5>
+            <h4 class="temperatura ">Temperatura</h4>
+
         <!-- valores vento, nuvens , pressao atmosferica, humidade, coordenadas geograficas -->
-    </div>
-    <div class="lisboa">
-        <h4 class="cidade">Cidade</h4>
-        <h4 class="temperatura">Temperatura</h4>
-        <!-- valores vento, nuvens , pressao atmosferica, humidade, coordenadas geograficas -->
-    </div>
-    <div class="tokyo">
-        <h4 class="cidade">Cidade</h4>
-        <h4 class="temperatura">Temperatura</h4>
-        <!-- valores vento, nuvens , pressao atmosferica, humidade, coordenadas geograficas -->
+        </div>
     </div>
 </div>
+
 
 
 </body>
