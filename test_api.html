@@ -10,6 +10,7 @@
 
     <!-- vai buscar os scripts   <link rel="stylesheet" type="text/css" href="F6.css"> -->
     <link rel="stylesheet" type="text/css" href="teste_api_style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="js/api.js"></script>
 </head>
 <body>
@@ -19,20 +20,37 @@
     <input placeholder="Pesquisar" id="caixa-pesquisa">
     <button onclick="pesquisar();">Search</button>
 </div>
-<br><br>
-<div class="container text-white " id="container">
-    <div class="row centro card-deck" id="lista-cidades">
-        <div class="pre_cidades card col-md-6 col-lg-4 mt-5 text-left">
-            <h4 class="cidade">Cidade</h4>
-            <h5 class="tempo">tempo</h5>
-            <h4 class="temperatura ">Temperatura</h4>
 
-        <!-- valores vento, nuvens , pressao atmosferica, humidade, coordenadas geograficas -->
+<div class="hero">
+    <div class="container">
+        <form action="#" class="find-location">
+            <input type="text" placeholder="Find your location...">
+            <input type="submit" value="Pesquisar">
+        </form>
+    </div>
+</div>
+<br><br>
+
+<div class="forecast-table">
+    <div class="container text-white "  id="container">
+        <div class="forecast-container row centro">
+            <div class="today forecast" id="lista-cidades"><!-- .forecast-header -->
+                <div class="pre_cidades card col-md-5 col-lg-4 mt-7 text-left card_m">
+                    <div class="cidade">cidade</div>
+                    <div class="degree">
+                        <div class="temperatura">temp</div>
+                        <div class="forecast-icon">
+                            <img src="" class="icon">
+                        </div>
+                    </div>
+                    <br>
+                    <span><img src="images/icon-umberella.png" alt="">20%</span>
+                    <span><img src="images/icon-wind.png" alt="">18km/h</span>
+                    <span><img src="images/icon-compass.png" alt="">East</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
-
-
 </body>
 </html>

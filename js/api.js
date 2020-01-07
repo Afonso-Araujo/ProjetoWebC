@@ -148,6 +148,7 @@ function paises_iniciais() {
             var pressao = msg.list[i].main.pressure;
             var humidade = msg.list[i].main.humidity;
             var tempo = msg.list[i].weather[0].main;
+            var icon = msg.list[i].weather[0].icon;
 
             var cidade_html = $(".cidade", result_html);
             var temperatura_html = $(".temperatura",result_html);
@@ -155,6 +156,7 @@ function paises_iniciais() {
             var pressao_html = $(".pressao",result_html);
             var humidade_html = $(".humidade",result_html);
             var tempo_html = $(".tempo",result_html);
+            var icon_html = $(".icon", result_html);
 
             cidade_html.text(cidade);
             temperatura_html.text(temperatuta + "ºC");
@@ -162,6 +164,8 @@ function paises_iniciais() {
             pressao_html.text("Pressâo Atmosferica: " + pressao);
             humidade_html.text("Humidade: " + humidade + "%");
             tempo_html.text(tempo);
+            var completo= "http://openweathermap.org/img/w/"+ icon + ".png";
+            icon_html.attr('src',completo);
 
             lista_filmes.append(result_html);
         }
