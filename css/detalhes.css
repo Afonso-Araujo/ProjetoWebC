@@ -24,6 +24,7 @@
 
 .button {
     display: inline-block;
+    text-align: center;
     background-color: #ffa500;
     border: none;
     color: white;
