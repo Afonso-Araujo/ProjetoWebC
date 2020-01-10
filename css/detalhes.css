@@ -1,0 +1,38 @@
+.text-info{
+    color: #ffa500;
+}
+
+.detalhes-temperatura div{
+    text-align: center;
+}
+
+.detalhes-cidade h2{
+    display: inline;
+}
+
+
+.detalhes-cidade h4, p{
+    display: inline;
+
+}
+
+.detalhes-temperatura h1{
+    font-size: 50px;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #ffa500;
+    border: none;
+    color: white;
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}

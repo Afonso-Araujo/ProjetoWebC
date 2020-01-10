@@ -1,0 +1,22 @@
+.centro{
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    display: block;
+    position: relative;
+    top: 20px;
+    left: 15px;
+    right: 20px;
+    width: 350px;
+    height: 150px;
+    background: #323544;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    margin: 10px 10px 40px;
+    cursor: pointer;
+}
+.pre_cidades h4{
+    display: inline;
+    vertical-align: top;
+}

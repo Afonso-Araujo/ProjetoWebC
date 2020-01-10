@@ -1,0 +1,94 @@
+"use strict"
+
+const API_KEY = "1a40a0fc7ce4a4c44c458236ad905f42";
+
+const URL = "http://api.openweathermap.org/data/2.5/weather?";
+
+var div_detalhes_temperatuta_clone = null;
+var div_detalhes_cidade_clone = null;
+
+$(function () {
+
+    var barra = window.location.href;
+    var split_it = barra.split("id=");
+    var idcidade = split_it[1];
+
+    //console.log(idcidade);
+
+    var div_temperatura = $(".detalhes-temperatura");
+    div_detalhes_temperatuta_clone = div_temperatura.clone();
+    div_temperatura.hide();
+
+    var div_cidade = $(".detalhes-cidade");
+    div_detalhes_cidade_clone = div_cidade.clone();
+    div_cidade.hide();
+
+    $.ajax({
+        method: "GET",
+        url: URL,
+        data: {
+            id: idcidade,
+            units: "metric",
+            appid: API_KEY
+        },
+    }).done(function (msg) {
+        console.log("Detalhes: ",msg);
+        var detalhes_temp = $("#detalhes-temp");
+        detalhes_temp.html("");
+
+        var detalhes_cidade = $("#detalhes-cid");
+        detalhes_cidade.html("");
+        // console.log(msg);
+
+        var html_detalhes = div_detalhes_temperatuta_clone.clone();
+        var html_temperatura = div_detalhes_cidade_clone.clone();
+
+        var temperatura = msg.main.temp;
+        var tempo = msg.weather[0].main;
+        var icon = msg.weather[0].icon;
+
+        var nome_cidade = msg.name;
+        var sigla = msg.sys.country;
+        var vento = msg.wind.speed;
+        var nuvens = msg.clouds.all;
+        var pre_Atmosferica = msg.main.pressure;
+        var humidade = msg.main.humidity;
+        var lat = msg.coord.lat;
+        var lon = msg.coord.lon;
+
+        var temperatura_html = $(".temperatura", html_detalhes);
+        var tempo_html = $(".tempo", html_detalhes);
+        var icon_html = $(".icon", html_detalhes);
+        var link_html = $(".idcidade", html_detalhes);
+
+        var nome_cidade_html = $(".nome-cidade", html_temperatura);
+        var sigla_html = $(".sigla", html_temperatura);
+        var vento_html = $(".vento", html_temperatura);
+        var nuvens_html = $(".nuvens", html_temperatura);
+        var pre_Atmosferica_html = $(".pressaoAtmos", html_temperatura);
+        var humidade_html = $(".humidade", html_temperatura);
+        var lat_html = $(".latitude", html_temperatura);
+        var lon_html = $(".longitude", html_temperatura);
+
+        temperatura_html.text(temperatura + "ºC");
+        tempo_html.text(tempo);
+
+        var completo= "http://openweathermap.org/img/w/"+ icon + ".png";
+        icon_html.attr('src',completo);
+        link_html.attr("href", "forecast.html?id=" + idcidade);
+
+        nome_cidade_html.text(nome_cidade);
+        sigla_html.text(" -"+sigla);
+        vento_html.text(vento);
+        nuvens_html.text(nuvens);
+        pre_Atmosferica_html.text(pre_Atmosferica);
+        humidade_html.text(humidade);
+        lat_html.text(lat);
+        lon_html.text(lon);
+
+
+        detalhes_temp.append(html_detalhes);
+        detalhes_cidade.append(html_temperatura);
+
+    });
+});
